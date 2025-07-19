@@ -12,7 +12,7 @@ This is an educational project focused on how to design and implement a MLOPs wo
 - Source code versioning and control: Git/Github
 - Containerization: Docker
 - Manage and orchestrate containerized applications: K8S, Helm
-- Model registry: MLFlow
+- Model registry: MLflow
 - Model serving: FastAPI
 - CI/CD: Jenkins
 - Model span tracing: Jaeger Tracing
@@ -31,7 +31,7 @@ Stroke_pred_MLOPS/
     ├── src/                             # **Source code**
     │   ├── notebook/                    # Jupyter notebooks for EDA and experiments
     │   ├── test_src/                    # Pytest code
-    │   └── train_src/                   # Training pipeline scripts (Log model to Mlflow)
+    │   └── train_src/                   # Training pipeline scripts (Log model to MLflow)
     │   ├── deploy.sh                    # Shell script for deployment Model serving API
     │   ├── JenkinsFile                  # CI/CD pipeline using Jenkins
     │
@@ -45,8 +45,8 @@ Stroke_pred_MLOPS/
     │   ├── grafana/                     # Grafana dashboards
     │   ├── jenkins/                     # Jenkins pipelines/config
     │   └──└── docker-compose.yml        # Docker Compose for Jenkins service
-    │   ├── mlflow/                      # MLflow tracking setup
-    │   │   └──└── docker-compose.yml    # Docker Compose for Mlflow service
+    │   ├── MLflow/                      # MLflow tracking setup
+    │   │   └──└── docker-compose.yml    # Docker Compose for MLflow service
     │   ├── model_api_serving/           # FastAPI or Flask model serving code
     │   │   └──└── docker-compose.yml    # Docker Compose for FastAPI model serving service
     │   └── prometheus/                  # Prometheus monitoring setup
@@ -73,7 +73,7 @@ pip install requirements.txt
 
 ## Deploy Docker services
 **See more details about installation in /service/README.md**
-### MLFLOW
+### MLflow
 ```shell
 cd service/mlflow/
 docker-compose up --build

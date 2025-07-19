@@ -1,19 +1,19 @@
 # Set up services using Docker
 **Make sure you are under /service directory first!**
 
-## MLFLOW
-### Set up mlflow
+## MLflow
+### Set up MLflow
 ```shell
 cd mlflow/
 docker-compose up --build
 ```
-Access to mlflow at
+Access to MLflow at
 ```shell
 http://localhost:5001
 ```
 ![Mlflowmain screen](../references/images/mlflow.png)
 
-### Run training script to registry model to mlflow
+### Run training script to registry model to MLflow
 ```shell
 python ../../src/train_src/registry_model_2_mlflow.py
 ```
