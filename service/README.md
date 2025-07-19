@@ -26,7 +26,7 @@ Example of my model experiment
 cd model_api_serving/
 docker-compose up --build
 ```
-Access to fast api for model serving at
+Access Swagger UI for model serving at
 ```shell
 http://localhost:7000/docs
 ```
