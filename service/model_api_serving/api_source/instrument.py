@@ -1,14 +1,11 @@
 import os
-from fastapi import FastAPI, Request
-from opentelemetry import trace, metrics
+from opentelemetry import trace
 from opentelemetry.instrumentation.fastapi import FastAPIInstrumentor
 from opentelemetry.sdk.resources import SERVICE_NAME, Resource
 from opentelemetry.sdk.trace import TracerProvider
 from opentelemetry.sdk.trace.export import BatchSpanProcessor
 from opentelemetry.exporter.otlp.proto.http.trace_exporter import OTLPSpanExporter
-from opentelemetry.sdk.metrics import MeterProvider
-from opentelemetry.sdk.metrics.export import PeriodicExportingMetricReader
-from prometheus_client import start_http_server, Summary, Counter, Gauge
+from prometheus_client import start_http_server, Summary, Counter
 import time
 from .main import app
 
