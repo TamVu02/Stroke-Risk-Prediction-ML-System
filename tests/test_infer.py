@@ -5,7 +5,7 @@ from unittest.mock import MagicMock, patch
 from fastapi.testclient import TestClient
 
 # Add the root directory to sys.path
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 print(sys.path)
 from service.model_api_serving.api_source.main import app, model_loader
 import socket
@@ -24,7 +24,7 @@ def load_model():
     import os
     mlflow.set_tracking_uri(f"http://{resolve_host_gateway()}:5001")
     print(f"Using MLflow URI: {mlflow.get_tracking_uri()}")
-    return mlflow.pyfunc.load_model("models:/stroke_prediction_model/Staging")
+    return mlflow.pyfunc.load_model("models:/stroke_prediction_model/Production")
 
 app.dependency_overrides[model_loader] = load_model
 client = TestClient(app)

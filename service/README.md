@@ -54,10 +54,13 @@ curl -X 'POST' \
   "Smoking": "never smoked"
 }'
 ```
-Expected output
+Expected output:\
+0: Model predict that patient is NOT likely to get stroke based on the input parameters\
+1: The patient should be more careful with their health statú as they might likely to get stroke in the future
 ```shell
 {"stroke":0}
 ```
+
 
 ## PROMETHEUS, GRAFANA & JAEGER
 ### Set up services

@@ -31,7 +31,7 @@ def model_loader():
 	mlflow.set_tracking_uri(os.getenv("MLFLOW_TRACKING_URI", "http://172.17.0.1:5001"))  # Docker bridge IP
 
 	REGISTERED_MODEL_NAME = 'stroke_prediction_model'
-	STAGE_STATUS = 'Staging'
+	STAGE_STATUS = 'Production'
 	MODEL_URI = f"models:/{REGISTERED_MODEL_NAME}/{STAGE_STATUS}"
 
 	logger.info(f'Loading model: {MODEL_URI}')
