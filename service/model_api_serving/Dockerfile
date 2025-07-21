@@ -6,8 +6,11 @@ EXPOSE 7000
 # Define working folder
 WORKDIR /api_source
 
-# Copy to working folder
-COPY . .
+# Copy source code
+COPY service/model_api_serving/api_source ./api_source
+
+# Copy MLflow model
+COPY ./model/mlflow_model ./mlflow_model
 
 RUN pip install --upgrade pip && \
 	pip install --no-cache-dir -r api_source/requirements.txt psycopg2-binary

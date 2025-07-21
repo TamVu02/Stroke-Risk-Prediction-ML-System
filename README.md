@@ -32,7 +32,6 @@ Stroke-Risk-Prediction-ML-System/
     │   ├── notebook/                    # Jupyter notebooks for EDA and experiments
     │   └── scripts/                     # Training pipeline scripts (Log model to MLflow)
     │   ├── deploy.sh                    # Shell script for deployment Model serving API
-    │   ├── Jenkinsfile                  # CI/CD pipeline using Jenkins
     │
     ├── model/                           # **Trained model files**
     │   └── stroke_pred_model.joblib     # Serialized model object
@@ -60,7 +59,7 @@ Stroke-Risk-Prediction-ML-System/
     │   ├── README.md                    # Guide for set up services on K8S
     │
     ├── references/images                # References images
-    │
+    │   Jenkinsfile                      # CI/CD pipeline using Jenkins
     ├── requirements.txt                 # Python dependencies
     └── README.md                        # Project overview and documentation
 ```

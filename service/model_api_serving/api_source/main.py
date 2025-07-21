@@ -27,16 +27,11 @@ def startup_event():
 
 def model_loader():
 	#Mlflow settings
-	logger.info(f'Mlflow uri: {os.getenv("MLFLOW_TRACKING_URI", "http://172.17.0.1:5001")}')
-	mlflow.set_tracking_uri(os.getenv("MLFLOW_TRACKING_URI", "http://172.17.0.1:5001"))  # Docker bridge IP
+	MLFLOW_MODEL_DIR = 'mlflow_model'
 
-	REGISTERED_MODEL_NAME = 'stroke_prediction_model'
-	STAGE_STATUS = 'Production'
-	MODEL_URI = f"models:/{REGISTERED_MODEL_NAME}/{STAGE_STATUS}"
-
-	logger.info(f'Loading model: {MODEL_URI}')
-	model = mlflow.pyfunc.load_model(MODEL_URI)
-	logger.info(f'Succesfully load model from {MODEL_URI}')
+	logger.info(f'Loading model from: {MLFLOW_MODEL_DIR}')
+	model = mlflow.pyfunc.load_model(MLFLOW_MODEL_DIR)
+	logger.info(f'Succesfully load model from {MLFLOW_MODEL_DIR}')
 	return model
 
 class PatientInfo(BaseModel):
